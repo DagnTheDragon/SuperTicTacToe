@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Tic Tac Toe</title>
+</head>
+<body>
+    <h1>Super Tic Tac Toe</h1>
+    <div>
+        <h2>Rules</h2>
+        <ol>
+            <li>Rules are very similar to a standard game of Tic Tac Toe with the exceptions listed below</li>
+            <li>The game is played on a 3 x 3 grid of 3 x 3 Tic Tac Toe boards(9 x 9 in total)</li>
+            <li>The first player gets to place their mark anywhere on the board.</li>
+            <li>The following player must play in the smaller game aligned with the space the previous player marked
+                <ul>
+                    <li>Ex: Player 1 marks the top left square of the center board so Player 2 must place their mark in the top left <b>GAME</b></li>
+                </ul>
+            </li>
+            <li>Repeat step 4 until one of the smaller games has a winner</li>
+            <li>The winner of the smaller game claims that section of the larger board
+                <ul>
+                    <li>If a player is forced to play on a board that has already been claimed they can place a mark anywhere like in step 3</li>
+                </ul>
+            </li>
+            <li>The game is over when a player has three marks in a row in the larger game board</li>
+        </ol>
+    </div>
+    <div>
+        <button onclick="PlayGame();">Play the Game</button>
+    </div>
+    <script src="SuperTicTackToeScript.js"></script>
+</body>
+</html>
