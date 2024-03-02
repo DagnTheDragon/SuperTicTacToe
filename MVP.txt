@@ -1,0 +1,3 @@
+Minimum Viable Product Goals
+    Functioning Super Tic Tac Toe Game
+    Visually set up to make the game playable
