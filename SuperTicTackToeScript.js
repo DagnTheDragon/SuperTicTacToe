@@ -1,4 +1,4 @@
-//Setup for starter arrays
+//Setup and run game
 function PlayGame(){
     /*
     The array indexes are keyed to their position on the 3x3 board:
@@ -25,7 +25,34 @@ function PlayGame(){
     let BC_Game = [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN];
     let BR_Game = [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN];
     
-    //Check all sectors for 3 in a row
+    //Other needed variables
+    let LastTurn = ['O', ''];
+        //[0] Last Player, set to 'O' so first player is 'X'
+        //[1] Code for space played in last Ex. TL for top left square
+
+
+    while (!Out_Game[9]){
+        turn(LastTurn, Out_Game, TL_Game, TC_Game, TR_Game, CL_Game, CC_Game, CR_Game, BL_Game, BC_Game, BR_Game)
+    }
+}
+
+//Turn Play
+function turn(LastTurn, Out_Game, TL_Game, TC_Game, TR_Game, CL_Game, CC_Game, CR_Game, BL_Game, BC_Game, BR_Game){
+    //Sets current turn player
+    TurnPlayer = 'X';
+    if (LastTurn[0] == 'X'){
+        TurnPlayer = 'O';
+    }
+    //First Turn of Game
+    let Available = false;
+    do {
+        if (LastTurn[1] == ''){
+            let ChosenSpace = prompt('Choose a space on the large board:\nRow then Column\nT: Top, C: Center, B: Bottom\nL:Left, C:Center, R:Right');
+            ChosenSpace = ChosenSpace.toUpperCase();
+        }
+    } while (Available == false);
+
+    //Check all uncleared games
     Out_Game = checks(Out_Game, TL_Game, TC_Game, TR_Game, CL_Game, CC_Game, CR_Game, BL_Game, BC_Game, BR_Game);
     TL_Game[9] = Out_Game[0];
     TC_Game[9] = Out_Game[1];
@@ -73,31 +100,31 @@ function checks(Out_Game, TL_Game, TC_Game, TR_Game, CL_Game, CC_Game, CR_Game, 
 }
 
 //Checks if ther are any three in a rows in any of the 10 game boards
-function checker(arr){
-    if (arr[0] != NaN && arr[0] == arr [1] && arr[0] == arr[2]){
+function checker(Arr){
+    if (Arr[0] != NaN && Arr[0] == Arr [1] && Arr[0] == Arr[2]){
         //Top Row Check
-        return arr[0];
-    } else if (arr[3] != NaN && arr[3] == arr [4] && arr[3] == arr[5]){
+        return Arr[0];
+    } else if (Arr[3] != NaN && Arr[3] == Arr [4] && Arr[3] == Arr[5]){
         // Center Row Check
-        return arr[3];
-    } else if (arr[6] != NaN && arr[6] == arr [7] && arr[6] == arr[8]){
+        return Arr[3];
+    } else if (Arr[6] != NaN && Arr[6] == Arr [7] && Arr[6] == Arr[8]){
         //Bottom Row Check
-        return arr[6];
-    } else if (arr[0] != NaN && arr[0] == arr [3] && arr[0] == arr[6]){
+        return Arr[6];
+    } else if (Arr[0] != NaN && Arr[0] == Arr [3] && Arr[0] == Arr[6]){
         //Left Column Check
-        return arr[0];
-    } else if (arr[1] != NaN && arr[1] == arr [4] && arr[1] == arr[7]){
+        return Arr[0];
+    } else if (Arr[1] != NaN && Arr[1] == Arr [4] && Arr[1] == Arr[7]){
         //Center Column Check
-        return arr[1];
-    } else if (arr[2] != NaN && arr[2] == arr [5] && arr[2] == arr[8]){
+        return Arr[1];
+    } else if (Arr[2] != NaN && Arr[2] == Arr [5] && Arr[2] == Arr[8]){
         //Right Column Check
-        return arr[2]
-    } else if (arr[0] != NaN && arr[0] == arr [4] && arr[0] == arr[8]){
+        return Arr[2]
+    } else if (Arr[0] != NaN && Arr[0] == Arr [4] && Arr[0] == Arr[8]){
         //Top Left to Bottom Right Diagonal Check
-        return arr[0];
-    } else if (arr[6] != NaN && arr[6] == arr [4] && arr[6] == arr[2]){
+        return Arr[0];
+    } else if (Arr[6] != NaN && Arr[6] == Arr [4] && Arr[6] == Arr[2]){
         //Bottom Left to Top Right Diagonal Check
-        return arr[6];
+        return Arr[6];
     } else {
         //No three in a row yet
         return NaN
