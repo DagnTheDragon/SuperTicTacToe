@@ -167,4 +167,3 @@ function turn(currentTurn, lastMove, BigTTT) {
     }
     return [currentTurn, newMove, nextMove];
 }
-//----------SETUP----------
