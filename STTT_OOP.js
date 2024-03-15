@@ -44,14 +44,6 @@ class TTT {
         }
     }
 
-    //Claim space
-    claimSpace = function (space, xo) {
-        if (eval('this.' + space + " === ''")) {
-            eval('this.' + space + ' = xo')
-        } else {
-
-        }
-    }
 }
 
 class BTTT {
@@ -116,7 +108,7 @@ function PlayGame() {
         } else {
             currentTurn = 'X'
         }
-        BigTTT.lastGame.check();
+        eval('BigTTT.'+lastGame+'.check();')
         BigTTT.bigCheck();
         if (BigTTT.victor != ''){
             alert(`The winner is ${BigTTT.victor}!`);
