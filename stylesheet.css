@@ -1,0 +1,188 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('images/Background.png'); /* Sets the background image */
+  background-size: cover; /* Should Cover the entire page -- If I get it to work*/
+  background-position: center; /* Center the background image */
+}
+
+.goldman-regular {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-bold {
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.container {
+  width: 80%; /* Adjust the width of your content container */
+  margin: 0 auto; /* Center the content horizontally */
+  background-color: rgba(255, 255, 255, 0.5); /* Background color for the content */
+  padding: 20px; /* Adding padding to the content container */
+}
+
+/* Image styles */
+.header-image {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Title container styles */
+.title-container {
+  display: flex;
+  align-items: center; /* Aligns the items vertically */
+}
+
+
+/* Button styles */
+button {
+  padding: 5px;
+  margin: 20px;
+  color: black;
+  background-image: linear-gradient(to right, #EE2A7B, #27AAE1, #F9ED32); /* Gradient from left to right */
+  border-radius: 10px;
+  border-color: black;
+}
+
+
+/* Cell styles */
+.cell {
+  width: 33.3%;
+  height: 33.3%;
+  background-color: #ccc;
+  border: 1px solid #666;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Overlay styles */
+.gray-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Box styles */
+.box {
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  position: relative;
+}
+
+/* Info styles */
+.info {
+  width: 470px;
+  height: 470px;
+  display: none;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+.info p {
+  padding: 5px 0;
+}
+
+.info.active {
+  display: block;
+}
+
+.info-close {
+  background-color: purple;
+  margin-left: 44%;
+}
+
+/* Overlay styles */
+.overlay {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.game-overlay {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 10px; 
+  left: 10px;
+  z-index: 10;
+  display: none;
+}
+
+/* Player styles */
+.player1 {
+  background-color: #00f;
+}
+
+.player2 {
+  background-color: #f00;
+}
+
+.red {
+  background-color: #f00;
+}
+
+.red-overlay {
+  background-color: rgba(255, 0, 0);
+}
+
+/* Container styles */
+#container {
+  width: 70%;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+#container.active {
+  width: 90%;
+}
+
+/* Game styles */
+#game {
+  width: 470px;
+  height: 470px;
+  padding: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #999;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Options styles */
+#options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Winner styles */
+#winner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  z-index: 11;
+}
+

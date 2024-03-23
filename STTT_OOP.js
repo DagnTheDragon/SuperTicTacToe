@@ -101,16 +101,16 @@ function PlayGame() {
     while (BigTTT.victor === '') {
         [currentTurn, lastGame, lastMove] = turn(currentTurn, lastMove, BigTTT);
         alert(`The ${currentTurn} player marked the ${lastMove} space of the ${lastGame} game.`)
-        eval("BigTTT."+lastGame+"."+lastMove+" = currentTurn")
-        console.log(eval("BigTTT."+lastGame))
-        if (currentTurn === 'X'){
+        eval("BigTTT." + lastGame + "." + lastMove + " = currentTurn")
+        console.log(eval("BigTTT." + lastGame))
+        if (currentTurn === 'X') {
             currentTurn = 'O'
         } else {
             currentTurn = 'X'
         }
-        eval('BigTTT.'+lastGame+'.check();')
+        eval('BigTTT.' + lastGame + '.check();')
         BigTTT.bigCheck();
-        if (BigTTT.victor != ''){
+        if (BigTTT.victor != '') {
             alert(`The winner is ${BigTTT.victor}!`);
         }
     }
@@ -134,7 +134,7 @@ function turn(currentTurn, lastMove, BigTTT) {
         } while (!availableSpace);
     } else {
         do {
-            if (eval("BigTTT."+lastMove+".victor != ''")){
+            if (eval("BigTTT." + lastMove + ".victor != ''")) {
                 newMove = prompt('Which game would you like to play in?\nPlease use the below code:\n\n tl | tc | tr \n____________\n cl | cc | cr \n____________\n bl | bc | br ');
                 if (eval("BigTTT." + newMove + ".victor === ''")) {
                     nextMove = prompt('Which space would you like to mark?\nPlease use the below code:\n\n tl | tc | tr \n____________\n cl | cc | cr \n____________\n bl | bc | br ');
@@ -146,9 +146,9 @@ function turn(currentTurn, lastMove, BigTTT) {
                 } else {
                     alert('That game is unavailable please pick a different game.')
                 }
-            } else if (eval("BigTTT."+lastMove+".victor === ''")){
+            } else if (eval("BigTTT." + lastMove + ".victor === ''")) {
                 nextMove = prompt(`You are being forced to play in the ${lastMove} game.\nWhich space would you like to mark?\nPlease use the below code:\n\n tl | tc | tr \n____________\n cl | cc | cr \n____________\n bl | bc | br `)
-                if (eval("BigTTT."+lastMove+"."+nextMove+ " === ''")){
+                if (eval("BigTTT." + lastMove + "." + nextMove + " === ''")) {
                     availableSpace = true;
                 } else {
                     alert('That space is unavailable pick a different space.')
